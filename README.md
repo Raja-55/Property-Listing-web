@@ -1,6 +1,7 @@
 <div align="center">
 
   <!-- Animated Header Title -->
+
   <a href="https://git.io/typing-svg">
     <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=36&pause=1000&color=2563EB&center=true&vcenter=true&width=700&height=70&lines=HAVENLY+%E2%80%94+ZERO+BROKERAGE+PORTAL;Find%2C+Rent%2C+Buy+%26+List+Properties;Direct+Owner-to-Seeker+Connections;Built+with+React+19+%2B+Node.js+%2B+MongoDB" alt="Typing SVG Header" />
   </a>
@@ -10,6 +11,7 @@
   </p>
 
   <!-- Animated Badges Bar -->
+
   <p align="center">
     <a href="#-tech-stack"><img src="https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 19" /></a>
     <a href="#-tech-stack"><img src="https://img.shields.io/badge/Vite-8.0-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" /></a>
@@ -28,207 +30,433 @@
     <a href="#-roadmap">Roadmap</a>
   </p>
 
-  ---
 </div>
 
-## 📌 About Havenly
+📌 About Havenly
 
-**Havenly** is an end-to-end full-stack property portal designed to eliminate middleman commissions and connect property owners directly with buyers and tenants. Built to mimic and elevate modern platforms like NoBroker, Havenly offers an intuitive property discovery engine with real-time dynamic filtering across rental, residential purchase, and commercial real estate categories.
+Havenly is a full-stack real estate platform designed to connect property owners and property seekers directly, with a focus on a simple, modern, zero-brokerage experience.
 
-Whether you're looking for a cozy 1 BHK apartment, a luxury villa, or listing your commercial office space, Havenly provides a seamless user journey with zero brokerage fees, instant phone/email verification workflows, and secure authentication.
+The platform is organized as a single repository containing two separate frontend applications — Web for property seekers/owners and Admin for platform management — backed by a shared Node.js + Express API service.
 
----
+The project is structured so that each application can grow independently while common business logic remains centralized in the API.
 
-## ⚡ Animated Tech Stack
+⚡ Animated Tech Stack
 
-### Frontend & UI Ecosystem
+Frontend & UI Ecosystem
+
 <p align="left">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=react,vite,js,html,css,figma,postman&theme=dark" alt="Frontend Tech Stack" />
   </a>
 </p>
 
-- **Core Library:** React 19 (`react` & `react-dom`)
-- **Build Tooling:** Vite 8 (Hot Module Replacement & Lightning Fast Bundling)
-- **Routing:** React Router DOM v7
-- **Styling Architecture:** Modular Vanilla CSS Design System with glassmorphism, responsive grid layouts, and custom micro-animations
+Core Library: React 19
 
----
+Build Tooling: Vite
 
-### Backend & Database Engine
+Routing: React Router
+
+Styling: Modular CSS with responsive layouts, reusable UI components, and micro-interactions
+
+Applications: Separate Web and Admin frontend applications
+
+Backend & Database Engine
+
 <p align="left">
   <a href="https://skillicons.dev">
     <img src="https://skillicons.dev/icons?i=nodejs,express,mongodb,dotenv&theme=dark" alt="Backend Tech Stack" />
   </a>
 </p>
 
-- **Runtime:** Node.js (ES Modules syntax)
-- **Web Framework:** Express 5 (`express@^5.2.1`)
-- **Database Layer:** MongoDB with Mongoose ODM + **Hybrid In-Memory Fallback System**
-- **Security & Authentication:** JSON Web Token (`jsonwebtoken`), `bcryptjs` hashing, HTTP-Only Cookie parser (`cookie-parser`), CORS, Helmet security headers
+Runtime: Node.js
 
----
+Web Framework: Express
 
-## ✨ Key Features
+Database Layer: MongoDB with Mongoose
 
-### 🔍 1. Multi-Category Property Search & Smart Filtering
-- Seamless tab switching between **Rent**, **Buy**, and **Commercial** properties.
-- Dynamic filtering by **Location**, **Budget range**, **BHK Configuration** (1 BHK to 4+ BHK), and **Property/Space type** (Apartment, Villa, Office, Warehouse).
-- Instant visual clear filters and responsive hero search section.
+Authentication: JWT-based authentication with secure cookie support
 
-### 🛡️ 2. Dual-Engine Authentication Engine
-- **MongoDB + Mongoose Integration**: Production-ready document storage for user profile management.
-- **Auto Fallback Memory Database**: Built-in zero-config in-memory fallback allowing seamless operation even when MongoDB is offline or disconnected during development.
-- **Secure Token Storage**: Passwords hashed with `bcryptjs` salt factor 12, JWT issued into secure `HTTP-Only` cookies to protect against XSS attacks.
+Security: Password hashing, authentication middleware, authorization/RBAC, CORS, and environment-based configuration
 
-### 🏠 3. Owner Property Listing & Verification Pipeline
-- Interactive step-by-step verification pipeline (`/list-property/verify`) for owners.
-- Verified badges for listed properties ensuring high-trust transactions.
-- Tailored forms capturing detailed property specs, amenities, and rental conditions.
+API Style: REST API organized by business modules
 
-### 📱 4. Responsive & Modern Aesthetics
-- Ultra-modern UI designed with curated color palettes, subtle hover state transitions, and responsive grid layouts optimized for mobile, tablet, and desktop views.
+✨ Key Features
 
----
+🔍 1. Multi-Category Property Discovery
 
-## 📂 Project Architecture
+Search and browse properties based on user requirements.
 
-```
-nobroker_website/
-├── 📁 backend/                    # Node.js & Express API Server
-│   ├── 📁 src/
-│   │   ├── 📁 config/            # DB Connections & Environment Config
-│   │   ├── 📁 Controllers/       # Business Logic & Auth Handlers
-│   │   ├── 📁 Middlewares/       # JWT Verification & Global Error Handler
-│   │   ├── 📁 Models/            # Mongoose Schemas (User, Temp OTP)
-│   │   ├── 📁 Routes/            # Express Router Definitions (/api/user)
-│   │   ├── 📁 utils/             # AppError class, JWT Signing, Async Catchers
-│   │   ├── app.js               # Express application initialization
-│   │   └── server.js            # Server startup & DB initialization listener
-│   ├── package.json
-│   └── nodemon.json
+Support for Rent, Buy, and Commercial property flows.
+
+Filtering can be extended by location, budget, BHK, property type, and other property attributes.
+
+Responsive property discovery experience across desktop, tablet, and mobile.
+
+🏠 2. Property Owner Listing
+
+Owners can create and manage property listings.
+
+Structured property information keeps listing data consistent.
+
+Property listing workflows can include verification and approval stages.
+
+Designed for future expansion into property media, amenities, availability, and owner preferences.
+
+🛡️ 3. Authentication & Authorization
+
+Separate user and admin application experiences.
+
+Secure user authentication through the shared API.
+
+Passwords are stored using secure hashing.
+
+JWT-based authentication protects private API resources.
+
+Role-based authorization keeps admin-only operations separate from regular user operations.
+
+Admin accounts are intended to be provisioned securely rather than exposing public admin registration.
+
+🧑‍💼 4. Dedicated Admin Application
+
+The admin application is intentionally separated from the public web application.
+
+Admin responsibilities can include:
+
+User management
+
+Property management
+
+Listing verification
+
+Platform monitoring
+
+Reports and analytics
+
+Administrative operations
+
+Both applications communicate with the same backend API, keeping the business logic centralized.
+
+📱 5. Modern Responsive Experience
+
+Clean and modern interface.
+
+Reusable components.
+
+Responsive layouts.
+
+Scalable frontend structure.
+
+Separate Web and Admin UI boundaries.
+
+📂 Project Architecture
+
+The project follows a single-repository monorepo-style structure.
+
+property-listing-web/
 │
-└── 📁 frontend/                   # React 19 + Vite Web Application
-    ├── 📁 src/
-    │   ├── 📁 assets/            # Static media and brand logos
-    │   ├── 📁 components/        # Reusable UI Components (AuthForm, Brand, Icons)
-    │   ├── 📁 contexts/          # React Context API (AuthContext, State)
-    │   ├── 📁 data/              # Static Mock Data & Options
-    │   ├── 📁 pages/             # Page Views (Browsing, Buy, Rent, List, Verification)
-    │   ├── 📁 utils/             # API Axios/Fetch Helper utilities
-    │   ├── App.jsx               # Protected & Public Router Configuration
-    │   ├── style.css             # Main Design System & Global Stylesheet
-    │   └── main.jsx              # React DOM Root Renderer
-    ├── index.html
-    ├── vite.config.js
-    └── package.json
-```
+├── 📁 app/
+│   │
+│   ├── 📁 web/                         # Public Web Application
+│   │   ├── 📁 src/
+│   │   │   ├── 📁 app/                 # App setup, providers & routing
+│   │   │   ├── 📁 features/            # Business-focused frontend modules
+│   │   │   ├── 📁 components/          # Reusable UI components
+│   │   │   ├── 📁 pages/               # Web application pages
+│   │   │   ├── 📁 hooks/               # Reusable React hooks
+│   │   │   ├── 📁 services/            # API/service communication
+│   │   │   ├── 📁 utils/               # Helper functions
+│   │   │   ├── 📁 constants/            # Shared frontend constants
+│   │   │   ├── 📁 types/                # Frontend types/interfaces
+│   │   │   └── 📁 assets/               # Images, icons & static assets
+│   │   ├── index.html
+│   │   ├── vite.config.js
+│   │   └── package.json
+│   │
+│   └── 📁 admin/                       # Admin Dashboard Application
+│       ├── 📁 src/
+│       │   ├── 📁 app/                 # Admin app setup & routing
+│       │   ├── 📁 features/            # Admin business modules
+│       │   ├── 📁 components/          # Reusable admin UI components
+│       │   ├── 📁 pages/               # Admin pages
+│       │   ├── 📁 hooks/               # Reusable admin hooks
+│       │   ├── 📁 services/             # API/service communication
+│       │   ├── 📁 utils/                # Helper functions
+│       │   ├── 📁 constants/            # Admin constants
+│       │   ├── 📁 types/                # Admin types/interfaces
+│       │   └── 📁 assets/               # Admin assets
+│       ├── index.html
+│       ├── vite.config.js
+│       └── package.json
+│
+├── 📁 service/
+│   └── 📁 api/                         # Shared Backend API
+│       ├── 📁 src/
+│       │   ├── 📁 config/              # Database & environment configuration
+│       │   ├── 📁 modules/             # Business modules
+│       │   │   ├── 📁 auth/             # Authentication
+│       │   │   ├── 📁 users/            # User management
+│       │   │   ├── 📁 admins/           # Admin management
+│       │   │   ├── 📁 properties/       # Property management
+│       │   │   ├── 📁 search/           # Search & filtering
+│       │   │   ├── 📁 payments/         # Payment-related logic
+│       │   │   ├── 📁 notifications/    # Notifications
+│       │   │   └── 📁 reports/          # Reports & analytics
+│       │   ├── 📁 middleware/           # Auth, RBAC & error middleware
+│       │   ├── 📁 shared/               # Shared backend utilities
+│       │   ├── 📁 routes/               # API route registration
+│       │   ├── app.js                   # Express application
+│       │   └── server.js                # Server startup
+│       ├── package.json
+│       └── .env                         # Local environment file (ignored by Git)
+│
+├── 📁 packages/                         # Shared packages (as the project grows)
+│   ├── 📁 types/
+│   ├── 📁 constants/
+│   ├── 📁 eslint-config/
+│   └── 📁 ui/
+│
+├── 📁 docs/                             # Project documentation
+│   ├── 📁 architecture/
+│   ├── 📁 api/
+│   └── 📁 development/
+│
+├── 📁 scripts/                          # Project automation & database scripts
+│   ├── seedAdmin.js
+│   └── seedDatabase.js
+│
+├── 📁 .github/                          # CI/CD and GitHub configuration
+│
+├── .gitignore
+├── .editorconfig
+├── package.json
+├── package-lock.json
+└── README.md
 
----
+Architecture principle: Web and Admin are separate frontend applications, while the API remains centralized. This keeps the project easy to maintain without duplicating backend business logic.
 
-## 🚀 Getting Started
+🚀 Getting Started
 
-### Prerequisites
-- [Node.js](https://nodejs.org/) v18.0.0 or higher
-- [npm](https://www.npmjs.com/) v9.0.0 or higher
-- [MongoDB](https://www.mongodb.com/) (Optional - in-memory mode automatically activates if MongoDB is absent)
+Prerequisites
 
----
+Node.js v18+
 
-### 🛠️ 1. Backend Setup
+npm v9+
 
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
+MongoDB
 
-2. Install backend dependencies:
-   ```bash
-   npm install
-   ```
+Git
 
-3. Create a `.env` file in the `backend/` directory:
-   ```env
-   PORT=5000
-   NODE_ENV=development
-   MONGODB_URI=mongodb://localhost:27017/havenly
-   JWT_SECRET=your_super_secret_jwt_key_here
-   CLIENT_URL=http://localhost:5173
-   ```
+🛠️ 1. Clone the Repository
 
-4. Start the backend development server:
-   ```bash
-   npm run dev
-   ```
-   *The server will start on `http://localhost:5000`*
+git clone <repository-url>
+cd property-listing-web
 
----
+💻 2. Install Web Application
 
-### 💻 2. Frontend Setup
+cd app/web
+npm install
 
-1. Navigate to the frontend directory:
-   ```bash
-   cd ../frontend
-   ```
+Start the Web application:
 
-2. Install frontend dependencies:
-   ```bash
-   npm install
-   ```
+npm run dev
 
-3. Launch the Vite development server:
-   ```bash
-   npm run dev
-   ```
-   *The application will be accessible at `http://localhost:5173`*
+🧑‍💼 3. Install Admin Application
 
----
+Open another terminal:
 
-## 🔐 API Reference
+cd app/admin
+npm install
 
-### Base URL: `/api`
+Start the Admin application:
 
-| Endpoint | Method | Access | Description |
-| :--- | :---: | :---: | :--- |
-| `/health` | `GET` | Public | System status and API health check |
-| `/user/register` | `POST` | Public | Register new user account (Full Name, Email, Phone, Password) |
-| `/user/login` | `POST` | Public | Authenticate user & issue HTTP-Only JWT Cookie |
-| `/user/admin/login` | `POST` | Admin only | Authenticate an existing account whose `role` is `admin` |
-| `/user/logout` | `POST` | Public | Clear JWT token cookie |
-| `/user/me` | `GET` | Protected | Fetch current logged-in user profile |
+npm run dev
 
----
+⚙️ 4. Setup API Service
 
-## 🗺️ Roadmap & Future Scope
+Open another terminal:
 
-- [x] Initial UI Design System & Component Library
-- [x] Rent, Buy, & Commercial Property Search Engine
-- [x] Dual-engine Auth (MongoDB + Fallback Memory DB)
-- [x] Property Verification Workflow for Owners
-- [ ] Real-time Chat between Property Owners & Buyers/Tenants (Socket.io)
-- [ ] Interactive Map Integration (Mapbox API / Google Maps API)
-- [ ] Integrated Rental Agreement Generator & E-Signature
-- [ ] Online Rent Payment Gateway Integration (Razorpay / Stripe)
+cd service/api
+npm install
 
----
+Create your local environment file:
 
-## 🤝 Contributing
+service/api/.env
 
-Contributions, issues, and feature requests are welcome! Feel free to check the issues page or submit a pull request.
+Example:
 
-1. Fork the Project
-2. Create your Feature Branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your Changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the Branch (`git checkout -origin feature/AmazingFeature`)
-5. Open a Pull Request
+PORT=5000
+NODE_ENV=development
 
----
+MONGO_URI=your_mongodb_connection_string
+JWT_SECRET=your_super_secret_jwt_key
 
-## 📄 License
+CLIENT_ORIGIN=http://localhost:5173
 
-Distributed under the **ISC License**. See `LICENSE` for more information.
+Never commit .env files or real credentials to Git.
+
+Start the API:
+
+npm run dev
+
+🔐 Authentication & Authorization Flow
+
+Havenly follows a clear separation between authentication and authorization.
+
+User
+ │
+ ├── Register
+ │      ↓
+ │   User Account
+ │
+ └── Login
+        ↓
+   Authentication
+        ↓
+     JWT Token
+        ↓
+  Auth Middleware
+        ↓
+   Role / Permission Check
+        ↓
+ ┌───────────────┬────────────────┐
+ │ Regular User  │     Admin      │
+ │               │                │
+ │ Web App       │   Admin App    │
+ └───────────────┴────────────────┘
+
+Admin Account
+
+Admin accounts are designed to be created securely through a controlled provisioning/seed process rather than exposing a public admin registration endpoint.
+
+This keeps administrative account creation separate from normal user registration.
+
+🔌 API Reference
+
+The API is located inside:
+
+service/api/
+
+API routes are organized around business modules rather than placing all controllers and logic into one large directory.
+
+Planned API Organization
+
+Module
+
+Responsibility
+
+/auth
+
+Authentication and session/token operations
+
+/users
+
+User profile and account operations
+
+/admins
+
+Administrative operations
+
+/properties
+
+Property creation, update and management
+
+/search
+
+Property search and filtering
+
+/payments
+
+Payment-related operations
+
+/notifications
+
+User/admin notifications
+
+/reports
+
+Reports and analytics
+
+Endpoint paths should be documented here as they are implemented. This keeps the README aligned with the actual API instead of documenting endpoints that do not exist yet.
+
+🗺️ Roadmap & Future Scope
+
+Initial project architecture
+
+Separate Web and Admin frontend applications
+
+Centralized backend API structure
+
+Environment configuration and Git protection for .env
+
+User authentication
+
+Admin authentication
+
+Role-based access control
+
+Property listing management
+
+Advanced property search & filtering
+
+Property verification workflow
+
+Real-time chat between owners and seekers
+
+Interactive map integration
+
+Rental agreement generation
+
+Online payment integration
+
+Notifications system
+
+Reports & analytics dashboard
+
+🤝 Development Guidelines
+
+To keep the project maintainable as the team grows:
+
+Keep Web and Admin frontend code inside their respective applications.
+
+Keep business logic inside the API service rather than duplicating it in frontend applications.
+
+Organize backend code by business module.
+
+Keep authentication and authorization logic centralized.
+
+Reuse shared code only when it is genuinely shared.
+
+Never commit .env files, credentials, API keys, or secrets.
+
+Keep README and architecture documentation updated when major structure changes are introduced.
+
+Prefer small, focused modules over large files containing unrelated responsibilities.
+
+🌿 Git Workflow
+
+Create a feature branch:
+
+git checkout -b feature/your-feature-name
+
+Commit your changes:
+
+git add .
+git commit -m "Add property search feature"
+
+Push the branch:
+
+git push origin feature/your-feature-name
+
+Then open a Pull Request for review.
+
+📄 License
+
+Distributed under the ISC License.
 
 <div align="center">
+
   <br />
-  <p>Made with ❤️ for a hassle-free, zero-brokerage real estate experience.</p>
+
+  <p>Made with ❤️ for a simpler, transparent, zero-brokerage real estate experience.</p>
+
 </div>
