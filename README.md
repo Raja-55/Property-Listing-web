@@ -1,7 +1,6 @@
 <div align="center">
 
   <!-- Animated Header Title -->
-
   <a href="https://git.io/typing-svg">
     <img src="https://readme-typing-svg.demolab.com?font=Outfit&weight=700&size=36&pause=1000&color=2563EB&center=true&vcenter=true&width=700&height=70&lines=HAVENLY+%E2%80%94+ZERO+BROKERAGE+PORTAL;Find%2C+Rent%2C+Buy+%26+List+Properties;Direct+Owner-to-Seeker+Connections;Built+with+React+19+%2B+Node.js+%2B+MongoDB" alt="Typing SVG Header" />
   </a>
@@ -11,7 +10,6 @@
   </p>
 
   <!-- Animated Badges Bar -->
-
   <p align="center">
     <a href="#-tech-stack"><img src="https://img.shields.io/badge/React-19.2.0-61DAFB?style=for-the-badge&logo=react&logoColor=black" alt="React 19" /></a>
     <a href="#-tech-stack"><img src="https://img.shields.io/badge/Vite-8.0-646CFF?style=for-the-badge&logo=vite&logoColor=white" alt="Vite" /></a>
@@ -30,19 +28,23 @@
     <a href="#-roadmap">Roadmap</a>
   </p>
 
+  ---
+
 </div>
 
-📌 About Havenly
+## 📌 About Havenly
 
-Havenly is a full-stack real estate platform designed to connect property owners and property seekers directly, with a focus on a simple, modern, zero-brokerage experience.
+**Havenly** is a full-stack real estate platform designed to connect property owners and property seekers directly, with a focus on a simple, modern, zero-brokerage experience.
 
-The platform is organized as a single repository containing two separate frontend applications — Web for property seekers/owners and Admin for platform management — backed by a shared Node.js + Express API service.
+The platform is organized as a single repository containing two separate frontend applications — **Web** for property seekers/owners and **Admin** for platform management — backed by a shared **Node.js + Express API service**.
 
 The project is structured so that each application can grow independently while common business logic remains centralized in the API.
 
-⚡ Animated Tech Stack
+---
 
-Frontend & UI Ecosystem
+## ⚡ Animated Tech Stack
+
+### Frontend & UI Ecosystem
 
 <p align="left">
   <a href="https://skillicons.dev">
@@ -50,17 +52,15 @@ Frontend & UI Ecosystem
   </a>
 </p>
 
-Core Library: React 19
+- **Core Library:** React 19
+- **Build Tooling:** Vite
+- **Routing:** React Router
+- **Styling:** Modular CSS with responsive layouts, reusable UI components, and micro-interactions
+- **Applications:** Separate Web and Admin frontend applications
 
-Build Tooling: Vite
+---
 
-Routing: React Router
-
-Styling: Modular CSS with responsive layouts, reusable UI components, and micro-interactions
-
-Applications: Separate Web and Admin frontend applications
-
-Backend & Database Engine
+### Backend & Database Engine
 
 <p align="left">
   <a href="https://skillicons.dev">
@@ -68,90 +68,70 @@ Backend & Database Engine
   </a>
 </p>
 
-Runtime: Node.js
+- **Runtime:** Node.js
+- **Web Framework:** Express
+- **Database Layer:** MongoDB with Mongoose
+- **Authentication:** JWT-based authentication with secure cookie support
+- **Security:** Password hashing, authentication middleware, authorization/RBAC, CORS, and environment-based configuration
+- **API Style:** REST API organized by business modules
 
-Web Framework: Express
+---
 
-Database Layer: MongoDB with Mongoose
+## ✨ Key Features
 
-Authentication: JWT-based authentication with secure cookie support
+### 🔍 1. Multi-Category Property Discovery
 
-Security: Password hashing, authentication middleware, authorization/RBAC, CORS, and environment-based configuration
+- Search and browse properties based on user requirements.
+- Support for **Rent**, **Buy**, and **Commercial** property flows.
+- Filtering can be extended by location, budget, BHK, property type, and other property attributes.
+- Responsive property discovery experience across desktop, tablet, and mobile.
 
-API Style: REST API organized by business modules
+### 🏠 2. Property Owner Listing
 
-✨ Key Features
+- Owners can create and manage property listings.
+- Structured property information keeps listing data consistent.
+- Property listing workflows can include verification and approval stages.
+- Designed for future expansion into property media, amenities, availability, and owner preferences.
 
-🔍 1. Multi-Category Property Discovery
+### 🛡️ 3. Authentication & Authorization
 
-Search and browse properties based on user requirements.
+- Separate user and admin application experiences.
+- Secure user authentication through the shared API.
+- Passwords are stored using secure hashing.
+- JWT-based authentication protects private API resources.
+- Role-based authorization keeps admin-only operations separate from regular user operations.
+- Admin accounts are intended to be provisioned securely rather than exposing public admin registration.
 
-Support for Rent, Buy, and Commercial property flows.
-
-Filtering can be extended by location, budget, BHK, property type, and other property attributes.
-
-Responsive property discovery experience across desktop, tablet, and mobile.
-
-🏠 2. Property Owner Listing
-
-Owners can create and manage property listings.
-
-Structured property information keeps listing data consistent.
-
-Property listing workflows can include verification and approval stages.
-
-Designed for future expansion into property media, amenities, availability, and owner preferences.
-
-🛡️ 3. Authentication & Authorization
-
-Separate user and admin application experiences.
-
-Secure user authentication through the shared API.
-
-Passwords are stored using secure hashing.
-
-JWT-based authentication protects private API resources.
-
-Role-based authorization keeps admin-only operations separate from regular user operations.
-
-Admin accounts are intended to be provisioned securely rather than exposing public admin registration.
-
-🧑‍💼 4. Dedicated Admin Application
+### 🧑‍💼 4. Dedicated Admin Application
 
 The admin application is intentionally separated from the public web application.
 
 Admin responsibilities can include:
 
-User management
-
-Property management
-
-Listing verification
-
-Platform monitoring
-
-Reports and analytics
-
-Administrative operations
+- User management
+- Property management
+- Listing verification
+- Platform monitoring
+- Reports and analytics
+- Administrative operations
 
 Both applications communicate with the same backend API, keeping the business logic centralized.
 
-📱 5. Modern Responsive Experience
+### 📱 5. Modern Responsive Experience
 
-Clean and modern interface.
+- Clean and modern interface.
+- Reusable components.
+- Responsive layouts.
+- Scalable frontend structure.
+- Separate Web and Admin UI boundaries.
 
-Reusable components.
+---
 
-Responsive layouts.
+## 📂 Project Architecture
 
-Scalable frontend structure.
+The project follows a **single-repository monorepo-style structure**.
 
-Separate Web and Admin UI boundaries.
-
-📂 Project Architecture
-
-The project follows a single-repository monorepo-style structure.
-
+```text
 property-listing-web/
 │
 ├── 📁 app/
@@ -231,59 +211,82 @@ property-listing-web/
 ├── package.json
 ├── package-lock.json
 └── README.md
+```
 
-Architecture principle: Web and Admin are separate frontend applications, while the API remains centralized. This keeps the project easy to maintain without duplicating backend business logic.
+> **Architecture principle:** Web and Admin are separate frontend applications, while the API remains centralized. This keeps the project easy to maintain without duplicating backend business logic.
 
-🚀 Getting Started
+---
 
-Prerequisites
+## 🚀 Getting Started
 
-Node.js v18+
+### Prerequisites
 
-npm v9+
+- [Node.js](https://nodejs.org/) v18+
+- npm v9+
+- MongoDB
+- Git
 
-MongoDB
+---
 
-Git
+### 🛠️ 1. Clone the Repository
 
-🛠️ 1. Clone the Repository
-
+```bash
 git clone <repository-url>
 cd property-listing-web
+```
 
-💻 2. Install Web Application
+---
 
+### 💻 2. Install Web Application
+
+```bash
 cd app/web
 npm install
+```
 
 Start the Web application:
 
+```bash
 npm run dev
+```
 
-🧑‍💼 3. Install Admin Application
+---
+
+### 🧑‍💼 3. Install Admin Application
 
 Open another terminal:
 
+```bash
 cd app/admin
 npm install
+```
 
 Start the Admin application:
 
+```bash
 npm run dev
+```
 
-⚙️ 4. Setup API Service
+---
+
+### ⚙️ 4. Setup API Service
 
 Open another terminal:
 
+```bash
 cd service/api
 npm install
+```
 
 Create your local environment file:
 
+```text
 service/api/.env
+```
 
 Example:
 
+```env
 PORT=5000
 NODE_ENV=development
 
@@ -291,17 +294,23 @@ MONGO_URI=your_mongodb_connection_string
 JWT_SECRET=your_super_secret_jwt_key
 
 CLIENT_ORIGIN=http://localhost:5173
+```
 
-Never commit .env files or real credentials to Git.
+> Never commit `.env` files or real credentials to Git.
 
 Start the API:
 
+```bash
 npm run dev
+```
 
-🔐 Authentication & Authorization Flow
+---
 
-Havenly follows a clear separation between authentication and authorization.
+## 🔐 Authentication & Authorization Flow
 
+Havenly follows a clear separation between **authentication** and **authorization**.
+
+```text
 User
  │
  ├── Register
@@ -323,135 +332,109 @@ User
  │               │                │
  │ Web App       │   Admin App    │
  └───────────────┴────────────────┘
+```
 
-Admin Account
+### Admin Account
 
 Admin accounts are designed to be created securely through a controlled provisioning/seed process rather than exposing a public admin registration endpoint.
 
 This keeps administrative account creation separate from normal user registration.
 
-🔌 API Reference
+---
+
+## 🔌 API Reference
 
 The API is located inside:
 
+```text
 service/api/
+```
 
 API routes are organized around business modules rather than placing all controllers and logic into one large directory.
 
-Planned API Organization
+### Planned API Organization
 
-Module
+| Module | Responsibility |
+| :--- | :--- |
+| `/auth` | Authentication and session/token operations |
+| `/users` | User profile and account operations |
+| `/admins` | Administrative operations |
+| `/properties` | Property creation, update and management |
+| `/search` | Property search and filtering |
+| `/payments` | Payment-related operations |
+| `/notifications` | User/admin notifications |
+| `/reports` | Reports and analytics |
 
-Responsibility
+> Endpoint paths should be documented here as they are implemented. This keeps the README aligned with the actual API instead of documenting endpoints that do not exist yet.
 
-/auth
+---
 
-Authentication and session/token operations
+## 🗺️ Roadmap & Future Scope
 
-/users
+- [x] Initial project architecture
+- [x] Separate Web and Admin frontend applications
+- [x] Centralized backend API structure
+- [x] Environment configuration and Git protection for `.env`
+- [ ] User authentication
+- [ ] Admin authentication
+- [ ] Role-based access control
+- [ ] Property listing management
+- [ ] Advanced property search & filtering
+- [ ] Property verification workflow
+- [ ] Real-time chat between owners and seekers
+- [ ] Interactive map integration
+- [ ] Rental agreement generation
+- [ ] Online payment integration
+- [ ] Notifications system
+- [ ] Reports & analytics dashboard
 
-User profile and account operations
+---
 
-/admins
-
-Administrative operations
-
-/properties
-
-Property creation, update and management
-
-/search
-
-Property search and filtering
-
-/payments
-
-Payment-related operations
-
-/notifications
-
-User/admin notifications
-
-/reports
-
-Reports and analytics
-
-Endpoint paths should be documented here as they are implemented. This keeps the README aligned with the actual API instead of documenting endpoints that do not exist yet.
-
-🗺️ Roadmap & Future Scope
-
-Initial project architecture
-
-Separate Web and Admin frontend applications
-
-Centralized backend API structure
-
-Environment configuration and Git protection for .env
-
-User authentication
-
-Admin authentication
-
-Role-based access control
-
-Property listing management
-
-Advanced property search & filtering
-
-Property verification workflow
-
-Real-time chat between owners and seekers
-
-Interactive map integration
-
-Rental agreement generation
-
-Online payment integration
-
-Notifications system
-
-Reports & analytics dashboard
-
-🤝 Development Guidelines
+## 🤝 Development Guidelines
 
 To keep the project maintainable as the team grows:
 
-Keep Web and Admin frontend code inside their respective applications.
+1. Keep **Web** and **Admin** frontend code inside their respective applications.
+2. Keep business logic inside the **API service** rather than duplicating it in frontend applications.
+3. Organize backend code by **business module**.
+4. Keep authentication and authorization logic centralized.
+5. Reuse shared code only when it is genuinely shared.
+6. Never commit `.env` files, credentials, API keys, or secrets.
+7. Keep README and architecture documentation updated when major structure changes are introduced.
+8. Prefer small, focused modules over large files containing unrelated responsibilities.
 
-Keep business logic inside the API service rather than duplicating it in frontend applications.
+---
 
-Organize backend code by business module.
-
-Keep authentication and authorization logic centralized.
-
-Reuse shared code only when it is genuinely shared.
-
-Never commit .env files, credentials, API keys, or secrets.
-
-Keep README and architecture documentation updated when major structure changes are introduced.
-
-Prefer small, focused modules over large files containing unrelated responsibilities.
-
-🌿 Git Workflow
+## 🌿 Git Workflow
 
 Create a feature branch:
 
+```bash
 git checkout -b feature/your-feature-name
+```
 
 Commit your changes:
 
+```bash
 git add .
 git commit -m "Add property search feature"
+```
 
 Push the branch:
 
+```bash
 git push origin feature/your-feature-name
+```
 
 Then open a Pull Request for review.
 
-📄 License
+---
 
-Distributed under the ISC License.
+## 📄 License
+
+Distributed under the **ISC License**.
+
+---
 
 <div align="center">
 
