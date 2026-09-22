@@ -1,0 +1,142 @@
+export const mockAdminData = {
+  dashboard: {
+    kpis: [
+      { title: 'Total Users', value: 24582, change: 12, period: 'vs. last 30 days', tone: 'blue', sparkline: [40, 48, 55, 62, 70, 78, 85] },
+      { title: 'Total Owners', value: 8421, change: 9, period: 'vs. last 30 days', tone: 'orange', sparkline: [15, 18, 22, 25, 30, 34, 38] },
+      { title: 'Total Properties', value: 12845, change: 15, period: 'vs. last 30 days', tone: 'blue', sparkline: [50, 58, 64, 72, 80, 88, 95] },
+      { title: 'Active Listings', value: 9842, change: 11, period: 'vs. last 30 days', tone: 'green', sparkline: [60, 65, 70, 75, 82, 88, 94] },
+      { title: 'Pending Listings', value: 421, change: -8, period: 'vs. last 30 days', tone: 'orange', sparkline: [25, 20, 18, 15, 12, 10, 8] },
+      { title: 'Enquiries', value: 4281, change: 20, period: 'vs. last 30 days', tone: 'purple', sparkline: [120, 150, 190, 230, 280, 330, 410] },
+      { title: 'Property Visits', value: 128421, change: 32, period: 'vs. last 30 days', tone: 'blue', sparkline: [800, 1100, 1400, 1800, 2300, 2900, 3600] },
+      { title: 'Revenue', value: 2480000, change: 16, period: 'vs. last 30 days', tone: 'green', currency: true, displayValue: '₹24.8 Lakh', sparkline: [12, 16, 20, 24, 28, 34, 40] },
+    ],
+    growth: [
+      { month: 'Apr 22', users: 8200, properties: 4100, revenue: 650000, enquiries: 3100, visits: 12000 },
+      { month: 'Apr 26', users: 9400, properties: 4800, revenue: 780000, enquiries: 3800, visits: 14500 },
+      { month: 'Apr 28', users: 11200, properties: 5300, revenue: 890000, enquiries: 4200, visits: 17000 },
+      { month: 'May 1', users: 10800, properties: 5100, revenue: 840000, enquiries: 4000, visits: 16200 },
+      { month: 'May 4', users: 12500, properties: 5900, revenue: 980000, enquiries: 4700, visits: 19500 },
+      { month: 'May 7', users: 13800, properties: 6400, revenue: 1050000, enquiries: 5100, visits: 21000 },
+      { month: 'May 10', users: 13100, properties: 6100, revenue: 1010000, enquiries: 4900, visits: 20200 },
+      { month: 'May 13', users: 14600, properties: 6800, revenue: 1140000, enquiries: 5600, visits: 23000 },
+      { month: 'May 16', users: 15200, properties: 7200, revenue: 1210000, enquiries: 6000, visits: 24800 },
+      { month: 'May 19', users: 16800, properties: 7900, revenue: 1320000, enquiries: 6500, visits: 27000 },
+      { month: 'May 21', users: 18400, properties: 8600, revenue: 1450000, enquiries: 7200, visits: 29500 },
+    ],
+    distribution: [
+      { name: 'Residential', value: 62 },
+      { name: 'Commercial', value: 18 },
+      { name: 'Projects', value: 11 },
+      { name: 'New Launches', value: 9 },
+    ],
+    cityInventory: [
+      { city: 'Kolkata', listings: 2431, percentage: 18 },
+      { city: 'Mumbai', listings: 1982, percentage: 15 },
+      { city: 'Bengaluru', listings: 1824, percentage: 14 },
+      { city: 'Pune', listings: 1542, percentage: 12 },
+      { city: 'Hyderabad', listings: 1421, percentage: 11 },
+      { city: 'Others', listings: 3654, percentage: 26 },
+    ],
+    buyVsRent: [
+      { name: 'Buy', value: 54, fill: '#2563eb' },
+      { name: 'Rent', value: 46, fill: '#ef4444' },
+    ],
+    topListings: [
+      { id: 'P-1001', name: 'Luxury 3 BHK Apartment', city: 'Bengaluru', price: '₹45,800/mo', views: '1.2K views', status: 'PUBLISHED' },
+      { id: 'P-1002', name: 'Commercial Office Space', city: 'Mumbai', price: '₹1.5L/mo', views: '980 views', status: 'PUBLISHED' },
+      { id: 'P-1003', name: '3 BHK Villa', city: 'Pune', price: '₹1.25 Cr', views: '860 views', status: 'PUBLISHED' },
+      { id: 'P-1004', name: 'Retail Shop', city: 'Kolkata', price: '₹85,000/mo', views: '720 views', status: 'PUBLISHED' },
+    ],
+    approvalQueue: [
+      { id: 'P-1188', name: 'New Town Premium Apartment', owner: 'Riya Sen', city: 'Kolkata', status: 'PENDING_REVIEW' },
+      { id: 'P-1194', name: 'Powai Studio Apartment', owner: 'Arjun Mehta', city: 'Mumbai', status: 'SUBMITTED' },
+      { id: 'P-1202', name: 'Golf Course Office Space', owner: 'Nexus Realty', city: 'Delhi NCR', status: 'REPORTED' },
+    ],
+    activity: [
+      { id: 1, title: 'Owner submitted property', description: 'New Town Premium Apartment is awaiting review.', time: '8 min ago' },
+      { id: 2, title: 'Payment completed', description: 'Featured listing payment received for P-1011.', time: '21 min ago' },
+      { id: 3, title: 'Report opened', description: 'Fake property report received for P-1202.', time: '45 min ago' },
+      { id: 4, title: 'Property approved', description: 'Lake View Residency moved to published.', time: '1 hr ago' },
+    ],
+  },
+  users: [
+    { id: 'U-1001', name: 'Rahul Sharma', email: 'rahul@email.com', phone: '+91 98765 43210', type: 'Buyer', city: 'Kolkata', status: 'ACTIVE', joined: '2025-04-12', properties: 0, enquiries: 12 },
+    { id: 'U-1002', name: 'Priya Singh', email: 'priya@email.com', phone: '+91 87654 32109', type: 'Owner', city: 'Bengaluru', status: 'ACTIVE', joined: '2025-03-18', properties: 4, enquiries: 28 },
+    { id: 'U-1003', name: 'Amit Kumar', email: 'amit@email.com', phone: '+91 76543 21098', type: 'Buyer', city: 'Mumbai', status: 'BLOCKED', joined: '2025-02-05', properties: 0, enquiries: 3 },
+    { id: 'U-1004', name: 'Neha Verma', email: 'neha@email.com', phone: '+91 65432 10987', type: 'Owner', city: 'Delhi NCR', status: 'ACTIVE', joined: '2025-01-22', properties: 2, enquiries: 19 },
+    { id: 'U-1005', name: 'Vikash Yadav', email: 'vikash@email.com', phone: '+91 54321 09876', type: 'Owner', city: 'Pune', status: 'ACTIVE', joined: '2024-11-14', properties: 6, enquiries: 41 },
+  ],
+  properties: [
+    { id: 'P-1001', title: 'Luxury 3 BHK Apartment', owner: 'Rahul Sharma', city: 'Bengaluru', category: 'Residential', type: 'Rent', price: '₹45,800/mo', verification: 'VERIFIED', status: 'PUBLISHED', bhk: '3 BHK', baths: '2 Baths', area: '1,600 Sq Ft', views: 1240, enquiries: 48 },
+    { id: 'P-1002', title: 'Office Space 2500 Sq Ft', owner: 'Neha Kapoor', city: 'Mumbai', category: 'Commercial', type: 'Rent', price: '₹1.50 Lakh/mo', verification: 'PENDING', status: 'PENDING', bhk: 'Office', baths: '1 Bath', area: '2,500 Sq Ft', views: 980, enquiries: 32 },
+    { id: 'P-1003', title: '3 BHK Villa', owner: 'Amit Singh', city: 'Pune', category: 'Residential', type: 'Buy', price: '₹1.25 Cr', verification: 'VERIFIED', status: 'APPROVED', bhk: '3 BHK', baths: '3 Baths', area: '2,200 Sq Ft', views: 860, enquiries: 24 },
+    { id: 'P-1004', title: 'Retail Shop', owner: 'Sunita Verma', city: 'Kolkata', category: 'Commercial', type: 'Rent', price: '₹85,000/mo', verification: 'REJECTED', status: 'REJECTED', bhk: 'Shop', baths: '1 Bath', area: '850 Sq Ft', views: 720, enquiries: 15 },
+    { id: 'P-1005', title: '2 BHK Apartment', owner: 'Arjun Patel', city: 'Hyderabad', category: 'Residential', type: 'Buy', price: '₹85 Lakh', verification: 'VERIFIED', status: 'APPROVED', bhk: '2 BHK', baths: '2 Baths', area: '1,150 Sq Ft', views: 540, enquiries: 19 },
+  ],
+  locations: [
+    {
+      name: 'India',
+      children: [
+        {
+          name: 'West Bengal',
+          children: [
+            {
+              name: 'Kolkata',
+              children: [
+                { name: 'Salt Lake', children: [{ name: 'ABC Residency' }, { name: 'XYZ Heights' }] },
+                { name: 'New Town', children: [{ name: 'Project A' }, { name: 'Project B' }] },
+              ],
+            },
+          ],
+        },
+        { name: 'Maharashtra', children: [{ name: 'Mumbai', children: [{ name: 'Powai' }, { name: 'Bandra' }] }] },
+        { name: 'Karnataka', children: [{ name: 'Bengaluru', children: [{ name: 'Indiranagar' }, { name: 'Whitefield' }] }] },
+        { name: 'Tamil Nadu', children: [{ name: 'Chennai', children: [{ name: 'T. Nagar' }] }] },
+        { name: 'Gujarat', children: [{ name: 'Ahmedabad', children: [{ name: 'SG Highway' }] }] },
+      ],
+    },
+  ],
+  services: [
+    { id: 'S-01', service: 'Home Painting', provider: 'PaintPro', price: '₹2,500+', status: 'ACTIVE' },
+    { id: 'S-02', service: 'Packers & Movers', provider: 'SafeMove', price: '₹3,000+', status: 'ACTIVE' },
+    { id: 'S-03', service: 'Legal Services', provider: 'LegalEase', price: '₹5,000+', status: 'ACTIVE' },
+    { id: 'S-04', service: 'Property Inspection', provider: 'InspectPro', price: '₹2,000+', status: 'ACTIVE' },
+    { id: 'S-05', service: 'Interior Design', provider: 'DreamSpace', price: '₹10,000+', status: 'ACTIVE' },
+  ],
+  payments: [
+    { id: 'TXN-1024', user: 'Rahul Sharma', service: 'Property Booking', amount: '₹45,800', method: 'UPI', status: 'SUCCESS', date: 'May 16, 2025' },
+    { id: 'TXN-1023', user: 'Priya Singh', service: 'Service Booking', amount: '₹3,000', method: 'Credit Card', status: 'SUCCESS', date: 'May 15, 2025' },
+    { id: 'TXN-1022', user: 'Amit Kumar', service: 'Subscription', amount: '₹1,500', method: 'UPI', status: 'FAILED', date: 'May 15, 2025' },
+    { id: 'TXN-1021', user: 'Neha Verma', service: 'Property Booking', amount: '₹85,000', method: 'Bank Transfer', status: 'SUCCESS', date: 'May 14, 2025' },
+    { id: 'TXN-1020', user: 'Vikash Yadav', service: 'Service Booking', amount: '₹2,500', method: 'Card', status: 'REFUNDED', date: 'May 14, 2025' },
+  ],
+  reports: [
+    { id: 'REP-1024', category: 'Fake Property', property: 'Luxury 3 BHK Apartment', reporter: 'Priya Singh', owner: 'Rahul Sharma', status: 'UNDER_INVESTIGATION', date: 'May 20, 2025' },
+    { id: 'REP-1023', category: 'Incorrect Price', property: 'Office Space 2500 Sq Ft', reporter: 'Amit Kumar', owner: 'Neha Kapoor', status: 'OPEN', date: 'May 19, 2025' },
+    { id: 'REP-1022', category: 'Owner Unreachable', property: '3 BHK Villa', reporter: 'Neha Verma', owner: 'Amit Singh', status: 'RESOLVED', date: 'May 18, 2025' },
+    { id: 'REP-1021', category: 'Duplicate Listing', property: 'Retail Shop', reporter: 'Vikash Yadav', owner: 'Sunita Verma', status: 'OPEN', date: 'May 17, 2025' },
+  ],
+  cms: [
+    { id: 'CMS-01', section: 'Homepage Banners', title: 'No Brokerage Homes in Kolkata', status: 'PUBLISHED', updated: 'May 18, 2025' },
+    { id: 'CMS-02', section: 'FAQs', title: 'How owner contact works', status: 'PUBLISHED', updated: 'May 16, 2025' },
+    { id: 'CMS-03', section: 'Localities', title: 'Top localities in Mumbai', status: 'DRAFT', updated: 'May 15, 2025' },
+    { id: 'CMS-04', section: 'SEO Metadata', title: 'Buy flats in Bengaluru', status: 'PUBLISHED', updated: 'May 14, 2025' },
+  ],
+  support: [
+    { id: 'TKT-1028', user: 'Rahul Sharma', category: 'Payments', priority: 'HIGH', status: 'IN_PROGRESS', date: 'May 20, 2025' },
+    { id: 'TKT-1027', user: 'Priya Singh', category: 'Property Listing', priority: 'MEDIUM', status: 'OPEN', date: 'May 19, 2025' },
+    { id: 'TKT-1026', user: 'Amit Kumar', category: 'Technical Issue', priority: 'HIGH', status: 'RESOLVED', date: 'May 18, 2025' },
+    { id: 'TKT-1025', user: 'Neha Verma', category: 'Enquiries', priority: 'LOW', status: 'IN_PROGRESS', date: 'May 17, 2025' },
+    { id: 'TKT-1024', user: 'Vikash Yadav', category: 'Refunds', priority: 'MEDIUM', status: 'RESOLVED', date: 'May 16, 2025' },
+  ],
+  admins: [
+    { id: 'A-01', name: 'Ishita Roy', role: 'Super Admin', email: 'ishita@havenly.admin', status: 'ACTIVE' },
+    { id: 'A-02', name: 'Mira Das', role: 'Support Executive', email: 'mira@havenly.admin', status: 'ACTIVE' },
+    { id: 'A-03', name: 'Kabir Saha', role: 'Property Manager', email: 'kabir@havenly.admin', status: 'ACTIVE' },
+  ],
+  activityLogs: [
+    { id: 'LOG-01', admin: 'Ishita Roy', action: 'Property approved', entity: 'P-1001', time: 'May 20, 2025 18:42' },
+    { id: 'LOG-02', admin: 'Mira Das', action: 'Ticket status changed', entity: 'TKT-1028', time: 'May 20, 2025 17:15' },
+    { id: 'LOG-03', admin: 'Kabir Saha', action: 'User blocked', entity: 'U-1003', time: 'May 19, 2025 21:08' },
+  ],
+}

@@ -1,121 +1,110 @@
-import { useState } from 'react'
-import heroImg from './assets/hero.png'
-import reactLogo from './assets/react.svg'
-import viteLogo from './assets/vite.svg'
-import './App.css'
+import { lazy, Suspense } from 'react'
+import { Navigate, Route, Routes } from 'react-router-dom'
+import { AdminDataProvider } from './context/AdminDataContext.jsx'
+import { AdminLayout } from './components/layout/AdminLayout.jsx'
+import { ProtectedRoute } from './components/layout/ProtectedRoute.jsx'
+import { SkeletonDashboard } from './components/ui/SkeletonLoaders.jsx'
+
+const LoginPage = lazy(() =>
+  import('./features/auth/LoginPage.jsx').then((module) => ({ default: module.LoginPage })),
+)
+const DashboardPage = lazy(() =>
+  import('./features/dashboard/DashboardPage.jsx').then((module) => ({ default: module.DashboardPage })),
+)
+const AnalyticsPage = lazy(() =>
+  import('./features/analytics/AnalyticsPage.jsx').then((module) => ({ default: module.AnalyticsPage })),
+)
+const ActivityLogsPage = lazy(() =>
+  import('./features/activity/ActivityLogsPage.jsx').then((module) => ({ default: module.ActivityLogsPage })),
+)
+const AdminsPage = lazy(() =>
+  import('./features/admins/AdminsPage.jsx').then((module) => ({ default: module.AdminsPage })),
+)
+const CmsPage = lazy(() =>
+  import('./features/cms/CmsPage.jsx').then((module) => ({ default: module.CmsPage })),
+)
+const LocationsPage = lazy(() =>
+  import('./features/locations/LocationsPage.jsx').then((module) => ({ default: module.LocationsPage })),
+)
+const ManagementPage = lazy(() =>
+  import('./features/shared/ManagementPage.jsx').then((module) => ({ default: module.ManagementPage })),
+)
+const PaymentsPage = lazy(() =>
+  import('./features/payments/PaymentsPage.jsx').then((module) => ({ default: module.PaymentsPage })),
+)
+const PropertiesPage = lazy(() =>
+  import('./features/properties/PropertiesPage.jsx').then((module) => ({ default: module.PropertiesPage })),
+)
+const PropertyDetailPage = lazy(() =>
+  import('./features/properties/PropertyDetailPage.jsx').then((module) => ({ default: module.PropertyDetailPage })),
+)
+const ReportsPage = lazy(() =>
+  import('./features/reports/ReportsPage.jsx').then((module) => ({ default: module.ReportsPage })),
+)
+const ServicesPage = lazy(() =>
+  import('./features/services/ServicesPage.jsx').then((module) => ({ default: module.ServicesPage })),
+)
+const SettingsPage = lazy(() =>
+  import('./features/settings/SettingsPage.jsx').then((module) => ({ default: module.SettingsPage })),
+)
+const SupportPage = lazy(() =>
+  import('./features/support/SupportPage.jsx').then((module) => ({ default: module.SupportPage })),
+)
+const UserDetailPage = lazy(() =>
+  import('./features/users/UserDetailPage.jsx').then((module) => ({ default: module.UserDetailPage })),
+)
+const UsersPage = lazy(() =>
+  import('./features/users/UsersPage.jsx').then((module) => ({ default: module.UsersPage })),
+)
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <section id="center">
-        <div className="hero">
-          <img src={heroImg} className="base" width="170" height="179" alt="" />
-          <img src={reactLogo} className="framework" alt="React logo" />
-          <img src={viteLogo} className="vite" alt="Vite logo" />
-        </div>
-        <div>
-          <h1>Get started</h1>
-          <p>
-            Edit <code>src/App.jsx</code> and save to test <code>HMR</code>
-          </p>
-        </div>
-        <button
-          type="button"
-          className="counter"
-          onClick={() => setCount((count) => count + 1)}
-        >
-          Count is {count}
-        </button>
-      </section>
-
-      <div className="ticks"></div>
-
-      <section id="next-steps">
-        <div id="docs">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#documentation-icon"></use>
-          </svg>
-          <h2>Documentation</h2>
-          <p>Your questions, answered</p>
-          <ul>
-            <li>
-              <a href="https://vite.dev/" target="_blank">
-                <img className="logo" src={viteLogo} alt="" />
-                Explore Vite
-              </a>
-            </li>
-            <li>
-              <a href="https://react.dev/" target="_blank">
-                <img className="button-icon" src={reactLogo} alt="" />
-                Learn more
-              </a>
-            </li>
-          </ul>
-        </div>
-        <div id="social">
-          <svg className="icon" role="presentation" aria-hidden="true">
-            <use href="/icons.svg#social-icon"></use>
-          </svg>
-          <h2>Connect with us</h2>
-          <p>Join the Vite community</p>
-          <ul>
-            <li>
-              <a href="https://github.com/vitejs/vite" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#github-icon"></use>
-                </svg>
-                GitHub
-              </a>
-            </li>
-            <li>
-              <a href="https://chat.vite.dev/" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#discord-icon"></use>
-                </svg>
-                Discord
-              </a>
-            </li>
-            <li>
-              <a href="https://x.com/vite_js" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#x-icon"></use>
-                </svg>
-                X.com
-              </a>
-            </li>
-            <li>
-              <a href="https://bsky.app/profile/vite.dev" target="_blank">
-                <svg
-                  className="button-icon"
-                  role="presentation"
-                  aria-hidden="true"
-                >
-                  <use href="/icons.svg#bluesky-icon"></use>
-                </svg>
-                Bluesky
-              </a>
-            </li>
-          </ul>
-        </div>
-      </section>
-
-      <div className="ticks"></div>
-      <section id="spacer"></section>
-    </>
+    <AdminDataProvider>
+      <Suspense fallback={<SkeletonDashboard />}>
+        <Routes>
+          <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
+          <Route path="/admin/login" element={<LoginPage />} />
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute>
+                <AdminLayout />
+              </ProtectedRoute>
+            }
+          >
+            <Route index element={<Navigate to="/admin/dashboard" replace />} />
+            <Route path="dashboard" element={<DashboardPage />} />
+            <Route path="users" element={<UsersPage />} />
+            <Route path="users/:userId" element={<UserDetailPage />} />
+            <Route path="properties" element={<PropertiesPage />} />
+            <Route path="properties/:propertyId" element={<PropertyDetailPage />} />
+            <Route path="locations" element={<LocationsPage />} />
+            <Route path="services" element={<ServicesPage />} />
+            <Route path="payments" element={<PaymentsPage />} />
+            <Route path="payments/:paymentId" element={<PaymentsPage />} />
+            <Route path="reports" element={<ReportsPage />} />
+            <Route path="reports/:reportId" element={<ReportsPage />} />
+            <Route path="cms" element={<CmsPage />} />
+            <Route path="analytics" element={<AnalyticsPage />} />
+            <Route path="support" element={<SupportPage />} />
+            <Route path="support/:ticketId" element={<SupportPage />} />
+            <Route path="admins" element={<AdminsPage />} />
+            <Route path="activity-logs" element={<ActivityLogsPage />} />
+            <Route path="settings" element={<SettingsPage />} />
+            <Route
+              path="*"
+              element={
+                <ManagementPage
+                  title="Page Not Found"
+                  description="The admin section you requested does not exist."
+                  records={[]}
+                />
+              }
+            />
+          </Route>
+        </Routes>
+      </Suspense>
+    </AdminDataProvider>
   )
 }
 

@@ -1,0 +1,31 @@
+import {
+  Activity,
+  BarChart3,
+  Building2,
+  CircleHelp,
+  CreditCard,
+  FileText,
+  Home,
+  LifeBuoy,
+  MapPinned,
+  Settings,
+  ShieldCheck,
+  Users,
+  Wrench,
+} from 'lucide-react'
+
+export const navigationItems = [
+  { label: 'Dashboard', path: '/admin/dashboard', icon: Home },
+  { label: 'User Management', path: '/admin/users', icon: Users, badge: 18 },
+  { label: 'Property Management', path: '/admin/properties', icon: Building2, badge: 42 },
+  { label: 'Location Management', path: '/admin/locations', icon: MapPinned },
+  { label: 'Service Management', path: '/admin/services', icon: Wrench },
+  { label: 'Payments', path: '/admin/payments', icon: CreditCard },
+  { label: 'Reports & Complaints', path: '/admin/reports', icon: CircleHelp, badge: 9 },
+  { label: 'CMS', path: '/admin/cms', icon: FileText },
+  { label: 'Analytics', path: '/admin/analytics', icon: BarChart3 },
+  { label: 'Help & Support', path: '/admin/support', icon: LifeBuoy, badge: 12 },
+  { label: 'Admins / Roles', path: '/admin/admins', icon: ShieldCheck },
+  { label: 'Activity Logs', path: '/admin/activity-logs', icon: Activity },
+  { label: 'Settings', path: '/admin/settings', icon: Settings },
+]
