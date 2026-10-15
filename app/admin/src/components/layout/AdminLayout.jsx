@@ -14,6 +14,7 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { NavLink, Outlet, useLocation, useNavigate } from 'react-router-dom'
 import { navigationItems } from '../../constants/navigation.js'
 import { useAdminData } from '../../context/AdminDataContext.jsx'
+import { useAuth } from '../../context/AuthContext.jsx'
 import { ProfileModal } from '../ui/ProfileModal.jsx'
 
 const periodOptions = [
@@ -42,6 +43,7 @@ export function AdminLayout() {
     setGlobalSearch,
     setPeriod,
   } = useAdminData()
+  const { logout } = useAuth()
 
   const activeItem =
     navigationItems.find((item) => location.pathname.startsWith(item.path)) ||
@@ -391,7 +393,10 @@ export function AdminLayout() {
 
                   <button
                     type="button"
-                    onClick={() => navigate('/admin/login')}
+                    onClick={() => {
+                      logout()
+                      navigate('/admin/login', { replace: true })
+                    }}
                     className="w-full flex items-center gap-2.5 px-3 py-2 text-xs font-bold text-rose-600 hover:bg-rose-50 rounded-xl transition-colors"
                   >
                     <LogOut size={15} />

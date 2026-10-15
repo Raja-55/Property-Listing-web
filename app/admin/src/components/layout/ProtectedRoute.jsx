@@ -1,10 +1,20 @@
-import { Navigate } from 'react-router-dom'
-
-const MOCK_ADMIN_SESSION = true
+import { Navigate, useLocation } from 'react-router-dom'
+import { useAuth } from '../../context/AuthContext'
 
 export function ProtectedRoute({ children }) {
-  if (!MOCK_ADMIN_SESSION) {
-    return <Navigate to="/admin/login" replace />
+  const { isAuthenticated, loading } = useAuth()
+  const location = useLocation()
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-slate-900 flex items-center justify-center text-slate-400 text-sm">
+        Verifying admin authorization...
+      </div>
+    )
+  }
+
+  if (!isAuthenticated) {
+    return <Navigate to="/admin/login" state={{ from: location }} replace />
   }
 
   return children

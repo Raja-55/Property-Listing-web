@@ -1,6 +1,7 @@
 import { lazy, Suspense } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { AdminDataProvider } from './context/AdminDataContext.jsx'
+import { AuthProvider } from './context/AuthContext.jsx'
 import { AdminLayout } from './components/layout/AdminLayout.jsx'
 import { ProtectedRoute } from './components/layout/ProtectedRoute.jsx'
 import { SkeletonDashboard } from './components/ui/SkeletonLoaders.jsx'
@@ -59,8 +60,9 @@ const UsersPage = lazy(() =>
 
 function App() {
   return (
-    <AdminDataProvider>
-      <Suspense fallback={<SkeletonDashboard />}>
+    <AuthProvider>
+      <AdminDataProvider>
+        <Suspense fallback={<SkeletonDashboard />}>
         <Routes>
           <Route path="/" element={<Navigate to="/admin/dashboard" replace />} />
           <Route path="/admin/login" element={<LoginPage />} />
@@ -105,6 +107,7 @@ function App() {
         </Routes>
       </Suspense>
     </AdminDataProvider>
+    </AuthProvider>
   )
 }
 
